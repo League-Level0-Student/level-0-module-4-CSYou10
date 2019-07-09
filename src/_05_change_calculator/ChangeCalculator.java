@@ -17,7 +17,7 @@ public class ChangeCalculator {
 		// Ask the user how many nickels they have
 		String n = JOptionPane.showInputDialog("How many Nickels do you have?");
 		// Convert their answer to an int using Integer.parseInt()
-
+		int nickel = Integer.parseInt(n);
 		// Ask the user how many dimes they have, and convert their answer
 		String d = JOptionPane.showInputDialog("How many dimes do you have?");
 		int dime = Integer.parseInt(d);
