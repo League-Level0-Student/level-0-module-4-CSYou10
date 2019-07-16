@@ -1,5 +1,7 @@
 package _10_happy_pet;
 
+import java.util.Random;
+
 import javax.swing.JOptionPane;
 
 public class HappyPet {
@@ -19,17 +21,27 @@ public class HappyPet {
 			// pet happy
 			// (eg: cuddle, food, water, take a walk, groom, clean up poop).
 			// Make sure to customize the title and question too.
-			int task = JOptionPane.showOptionDialog(null, "What do you want to do to make your pet happy", "Happy Pet", 0, JOptionPane.INFORMATION_MESSAGE, null,
-new String[] { "feed", "clean up poop", "walk" }, null);
-			if (task == 0) {
-				FeedPet();
+			if (happinessLevel >= 100) {
+				JOptionPane.showMessageDialog(null, "You love you pet!");
+				break;
 			}
-System.out.println(task);
+			int task = JOptionPane.showOptionDialog(null, "What do you want to do to make your pet happy", "Happy Pet",
+					0, JOptionPane.INFORMATION_MESSAGE, null, new String[] { "feed", "pet", "walk" }, null);
+			
+			
 			// 5. Use user input to call the appropriate method created in step 4.
-
+			
+			 if (task == 1) {
+				PetPet();
+			}else if (task == 2) {                                                             
+				WalkPet();
+			
 			// 6. If you determine the happiness level is large enough, tell the
 			// user that he loves his pet and use break; to exit for loop.
-
+			
+			}else if (task == 0) {
+				FeedPet();
+			}
 		}
 	}
 
@@ -38,7 +50,26 @@ System.out.println(task);
 	// purr when pet),
 	// and INCREMENT the pet's happiness Level.
 	private static void FeedPet() {
-JOptionPane.showMessageDialog(null, "");
+		Random random = new Random();
+		int FIncrease = random.nextInt(15);
+		JOptionPane.showMessageDialog(null, "Your pet's happiness has increased by " + FIncrease);
+		happinessLevel += FIncrease;
+		JOptionPane.showMessageDialog(null, "Your pets happiness is " + happinessLevel);
 	}
 
+	private static void PetPet() {
+		Random random = new Random();
+		int FIncrease = random.nextInt(15);
+		JOptionPane.showMessageDialog(null, "Your pet's happiness has increased by " + FIncrease);
+		happinessLevel += FIncrease;
+		JOptionPane.showMessageDialog(null, "Your pets happiness is " + happinessLevel);
+	}
+
+	private static void WalkPet() {
+		Random random = new Random();
+		int FIncrease = random.nextInt(15);
+		JOptionPane.showMessageDialog(null, "Your pet's happiness has increased by " + FIncrease);
+		happinessLevel += FIncrease;
+		JOptionPane.showMessageDialog(null, "Your pets happiness is " + happinessLevel);
+	}
 }
